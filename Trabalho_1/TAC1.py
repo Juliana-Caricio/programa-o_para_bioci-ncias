@@ -1,4 +1,4 @@
-refArquivo = open("\Users\Juliana\Documents\Juliana\programacao\Arquivo fasta.txt")
+refArquivo = open("\Users\Juliana\Documents\Juliana\programacao\TcCLB.FASTA")
 identificador = refArquivo.readline()[1:16]
 sequencia = ""
 for linha in refArquivo:
