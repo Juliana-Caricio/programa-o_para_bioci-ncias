@@ -1,2 +1,10 @@
 import csv
-with open()
+with open("/Users/Juliana/Documents/Juliana/programacao/species.csv") as csvfile:
+    data = csv.reader(csvfile, delimiter=',')
+    for lines in data:
+        if lines[3].upper().rstrip() == "BIRD":
+            print("%s\t%s\t%s\t%s" % (lines[0], lines[1], lines[2], lines[3].rstrip()), sep="\t")
+
+
+
+
