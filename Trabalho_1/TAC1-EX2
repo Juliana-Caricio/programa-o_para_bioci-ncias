@@ -1,3 +1,8 @@
 refArquivo = open("/Users/Juliana/Documents/Juliana/programacao/TriTrypDB-47_TcruziCLBrenerEsmeraldo-like_AP.fasta")
-identificador = refArquivo.read()[:-1]
-print(identificador)
+cabecalho = refArquivo.read()[1:-1]
+print(cabecalho)
+refArquivo.close()
+
+
+
+

@@ -3,7 +3,7 @@ identificador = refArquivo.readline()[1:16]
 sequencia = ""
 for linha in refArquivo:
     sequencia += linha.replace('\n', '')
-print(identificador, "\t", sequencia)
+print("Identificador: %s" % identificador, "\t", "Sequencia: %s" % sequencia)
 refArquivo.close()
 
 
