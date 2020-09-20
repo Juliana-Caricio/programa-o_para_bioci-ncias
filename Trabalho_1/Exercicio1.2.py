@@ -1,4 +1,5 @@
 import pandas as pd
 df = pd.read_excel("/Users/Juliana/Documents/Juliana/programacao/Juliana Caricio - WHO POP TB some.xlsx")
-soma = df.sum()[2]
+col = df.iloc[:, -1]
+soma = col.sum()
 print("Total de mortes =", soma)
