@@ -6,4 +6,3 @@ for linha in refArquivo:
 print(identificador, '\t', sequencia)
 refArquivo.close()
 
-
