@@ -7,3 +7,7 @@ for num in valor:
         negativos = negativos + 1
     elif num > 0:
         positivos = positivos + 1
+porcentagemP = (positivos/len(valor))*100
+porcentagemN = (negativos/len(valor))*100
+print("Media:", media, "Positivos", positivos, "Negativos", negativos, "Porcentagem de positivos:", porcentagemP, "Porcentagem de negativos:", porcentagemN)
+
