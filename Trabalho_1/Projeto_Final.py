@@ -1,5 +1,9 @@
 import pandas as pd
-from Bio import SeqI0
 tabela = pd.read_excel("/Users/Juliana/Documents/Juliana/programacao/Tabela_1.xlsx")
-desconhecido = SeqI0.parse("/Users/Juliana/Documents/Juliana/programacao/Rdesconhecidus.fasta", "fasta")
-conhecido = SeqI0.parse("/Users/Juliana/Documents/Juliana/programacao/VectorBase-48_RprolixusCDC_AnnotatedProteins.fasta", "fasta")
+coluna1 = tabela.iloc[:,1]
+soma1 = sum(coluna1)
+coluna_nova = pd.DataFrame()
+coluna_nova["Rap_1A_Normal"] = (coluna1*1000000)/soma1
+tabela_nova = pd.concat([tabela,coluna_nova], axis=1)
+print(tabela_nova)
+
