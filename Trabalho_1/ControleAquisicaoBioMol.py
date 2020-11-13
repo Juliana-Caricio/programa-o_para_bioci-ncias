@@ -1,9 +1,12 @@
 def controle_aquisicao_biomol():
-    x = input("Digite a relacao de produtos:")
-    y = x.replace("-1","")
-    lista1 = y.split(",")
-    tupla = [tuple(x.split(' ')) for x in lista1]
+    lista  = [0]
+    while lista[-1] != "-1":
+        x = input("Digite relacao de materias:")
+        lista.append(x)
+    lista2 = lista[1:-1]
+    tupla = [tuple(x.split(' ')) for x in lista2]
     dicionario = dict(tupla)
     print(dicionario)
+
 
 controle_aquisicao_biomol()
