@@ -7,6 +7,8 @@ def controle_aquisicao_biomol():
     tupla = [tuple(x.split(' ')) for x in lista2]
     dicionario = dict(tupla)
     print(dicionario)
+    from OperacoesCompra.py import OperacoesCompra()
+
 
 
 controle_aquisicao_biomol()
