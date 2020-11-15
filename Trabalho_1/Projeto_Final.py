@@ -1,4 +1,4 @@
-def Normalizacao():
+def Projeto_Final():
     import pandas as pd
     tabela = pd.read_excel("/Users/Juliana/Documents/Juliana/programacao/Tabela_1.xlsx")
     coluna1 = tabela.iloc[:, 1]
@@ -30,11 +30,13 @@ def Normalizacao():
     tabela_nova2 = pd.concat([tabela_nova1,media_A, media_B], axis=1)
     print(tabela_nova2)
 
+    genes_xA = tabela_nova2['Cond_A_CPM_media'].nlargest()
+    genes_xB = tabela_nova2['Cond_B_CPM_media'].nlargest()
+    print("Genes mais expressos da condicao A:","\n", genes_xA,"\n", "Genes mais expressos da condicao B: ","\n", genes_xB)
 
 
 
 
 
-
-Normalizacao()
+Projeto_Final()
 
