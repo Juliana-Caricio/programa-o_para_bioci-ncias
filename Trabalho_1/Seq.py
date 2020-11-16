@@ -14,25 +14,24 @@ for i in SeqIO.parse(arquivo, "fasta"):
 print( a,"\n", b,"\n", c,"\n", d,"\n",e)
 
 from Bio.Blast.Applications import NcbiblastxCommandline
-sequencia = "VectorBase-48_RprolixusCDC_AnnotatedProteins.fasta"
+sequencia = input(str("sequencia conhecida:"))
 meuOutPut = "blast.txt"
 blastx = "/Users/Juliana/Documents/Juliana/programacao/blastx.exe"
-meu_comando = NcbiblastxCommandline( query = a, subject = sequencia, outfmt = 6, out = meuOutPut, evalue = 0.05, cmd = blastx)
+meu_comando = NcbiblastxCommandline( query = str(a), subject = sequencia, outfmt = 6, out = meuOutPut, evalue = 0.05, cmd = blastx)
 print("Executando busca local:")
 stdout, stderr = meu_comando()
 print("Fim da execucao:")
 blast_result = open(meuOutPut, "r")
 resultado = blast_result.read()
-j = resultado.split("\n")
-for linha in j:
-    hit = linha.split('\t')
-    if len(hit) != 12:
-        break
-print("Sequência de busca: %s" % hit[qseqid])
-print("Sequência encontrada: %s" % hit[sseqid])
-print("Score = %s" % hit[bitscore])
-print("Identidade = %s" % hit[pident])
-print("E-value = %s" % hit[evalue])
+
+import pandas as pd
+result = pd.read_csv("blast.txt", sep="\t", names=["qseqid","sseqid","pident","length","mismatch","gapopen","qstart","qend","sstart","send","evalue","bitscore"])
+maximo_score = resultado.sort_values("bitscore")
+print(maximo_score.iloc[[-1]])
+
+
+
+
 
 
 
