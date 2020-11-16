@@ -1,4 +1,4 @@
-def OperacoesCompra():
+def Operacoes():
     lista = [0]
     while lista[-1] != "-1":
         x = input("Digite relacao dos materiais: ")
@@ -32,4 +32,4 @@ def OperacoesCompra():
 
 
 
-OperacoesCompra()
+Operacoes()
