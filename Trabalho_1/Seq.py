@@ -21,5 +21,18 @@ meu_comando = NcbiblastxCommandline( query = a, subject = sequencia, outfmt = 6,
 print("Executando busca local:")
 stdout, stderr = meu_comando()
 print("Fim da execucao:")
-resultado = open(meuOutPut, "r")
+blast_result = open(meuOutPut, "r")
+resultado = blast_result.read()
+j = resultado.split("\n")
+for linha in j:
+    hit = linha.split('\t')
+    if len(hit) != 12:
+        break
+print("Sequência de busca: %s" % hit[qseqid])
+print("Sequência encontrada: %s" % hit[sseqid])
+print("Score = %s" % hit[bitscore])
+print("Identidade = %s" % hit[pident])
+print("E-value = %s" % hit[evalue])
+
+
 
